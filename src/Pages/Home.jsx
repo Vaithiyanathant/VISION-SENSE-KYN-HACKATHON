@@ -1,12 +1,11 @@
 import React from 'react'
-import Test from './Test'
 
 const Home = () => {
   return (
     <div>
-      <Test/>
+        Home
     </div>
   )
 }
 
-export default Home
+export default Home;
