@@ -1,11 +1,14 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
+import { Button } from "../components/ui/button";
 
 const Home = () => {
-  return (
-    <div>
-      Home
-    </div>
-  )
-}
+	return (
+		<div className='flex justify-center items-center h-screen'>
+			<Button>Click here</Button>
+		</div>
+	);
+};
 
-export default Home
+export default Home;
