@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import ImageCheck from "./Pages/ImageCheck";
 import VideoCheck from "./Pages/VideoCheck";
+import FileUpload from "./Pages/uibc/";
 const App = () => {
 	return (
 		<>
@@ -26,6 +27,11 @@ const App = () => {
 					<Route
 						path='/video'
 						element={<VideoCheck />}
+					/>
+
+					<Route
+						path='/FileUpload'
+						element={<FileUpload />}
 					/>
 				</Routes>
 			</Router>
