@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../firebase'; // Adjust path as needed
@@ -6,11 +6,49 @@ import { auth, provider } from '../../firebase'; // Adjust path as needed
 const Login = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check if location data is already stored in localStorage
+    const storedLocation = localStorage.getItem('userLocation');
+    if (storedLocation) {
+      console.log('User location found in local storage:', JSON.parse(storedLocation));
+    }
+  }, []);
+
+  const getLocation = () => {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            resolve({ latitude, longitude });
+          },
+          (error) => {
+            reject('Unable to retrieve location');
+          }
+        );
+      } else {
+        reject('Geolocation is not supported by this browser');
+      }
+    });
+  };
+
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider)
-      .then((result) => {
+      .then(async (result) => {
         const user = result.user;
         console.log('User Info:', user);
+
+        // Get user location and store it in localStorage
+        try {
+          const location = await getLocation();
+          localStorage.setItem('userLocation', JSON.stringify(location)); // Store location
+          localStorage.setItem('userDetails', JSON.stringify(user)); // Store user details
+          console.log('User location:', location);
+        } catch (error) {
+          console.error(error);
+        }
+
+        // Redirect to home page after successful login
         navigate('/');
       })
       .catch((error) => {
