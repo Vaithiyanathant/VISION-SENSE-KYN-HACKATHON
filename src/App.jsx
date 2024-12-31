@@ -53,6 +53,7 @@ const App = () => {
 						path='/SocailHome'
 						element={<SocailHome />}
 					/>
+
 				</Routes>
 			</Router>
 		</>
