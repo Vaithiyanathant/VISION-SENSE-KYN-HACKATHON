@@ -27,15 +27,7 @@ const Sidebar = () => {
 
 	return (
 		<div className='bg-white h-screen w-64 flex flex-col text-gray-700 border-r shadow-md'>
-			{/* Logo Section */}
-			<div className='flex items-center justify-center h-16 bg-blue-500 text-white'>
-				<div className='flex items-center'>
-					<div className='bg-white h-8 w-8 rounded-full flex items-center justify-center text-blue-500 font-bold'>
-						A
-					</div>
-					<h1 className='text-xl font-bold ml-2'>ADMIN</h1>
-				</div>
-			</div>
+			
 
 			{/* Navigation Links */}
 			<nav className='flex-1 overflow-y-auto p-4'>

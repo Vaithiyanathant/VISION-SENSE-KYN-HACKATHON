@@ -8,27 +8,29 @@ import ModLog from "./ModLog";
 
 const Dashboard = () => {
 	return (
-		<div className='flex h-screen bg-gray-100'>
-			{/* Sidebar */}
-			<div className='w-64 bg-white shadow-md hidden md:block'>
-				<Sidebar
-					links={[
-						{
-							name: "Moderation Log",
-							path: "/ModLog",
-							icon: "users",
-						},
-					]}
-				/>
-			</div>
+		<>
+			<Navbar></Navbar>
+			<div className='flex h-screen bg-gray-100'>
+				{/* Sidebar */}
+				<div className='w-64 bg-white shadow-md hidden md:block'>
+					<Sidebar
+						links={[
+							{
+								name: "Moderation Log",
+								path: "/ModLog",
+								icon: "users",
+							},
+						]}
+					/>
+				</div>
+				{/* Main Content */}
 
-			{/* Main Content */}
-
-			{/* Page Content */}
-			<div className='p-6 flex-1 bg-[#f9fafb] overflow-y-auto'>
-				<ModLog />
+				{/* Page Content */}
+				<div className='p-6 flex-1 bg-[#f9fafb] overflow-y-auto'>
+					<ModLog />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

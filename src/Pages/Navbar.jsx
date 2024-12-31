@@ -8,6 +8,7 @@ import {
 	LucideMoreVertical,
 	LucideBell,
 } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link from React Router
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,24 +24,24 @@ const Navbar = () => {
 
 				{/* Center Navigation Links */}
 				<div className='hidden md:flex flex-1 justify-center items-center space-x-12'>
-					<a
-						href='/'
+					<Link
+						to='/'
 						className='flex flex-col items-center text-sm text-gray-700 hover:text-blue-600 transition'>
 						<LucideHome className='w-6 h-6 mb-1' />
 						<span>Home</span>
-					</a>
-					<a
-						href='/FileUpload'
+					</Link>
+					<Link
+						to='/FileUpload'
 						className='flex flex-col items-center text-sm text-gray-700 hover:text-blue-600 transition'>
 						<LucideUpload className='w-6 h-6 mb-1' />
 						<span>Upload</span>
-					</a>
-					<a
-						href='/Dashboard/Mod-log'
+					</Link>
+					<Link
+						to='/Dashboard/Mod-log'
 						className='flex flex-col items-center text-sm text-gray-700 hover:text-blue-600 transition'>
 						<LucideLayout className='w-6 h-6 mb-1' />
 						<span>Dashboard</span>
-					</a>
+					</Link>
 				</div>
 
 				{/* Right Action Links */}
@@ -60,7 +61,7 @@ const Navbar = () => {
 						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
 						Contributors
 					</a>
-					<LucideBell className='w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer' />
+					<div className='w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer' />
 				</div>
 
 				{/* Mobile Menu Icon */}
@@ -75,36 +76,38 @@ const Navbar = () => {
 			{/* Mobile Dropdown Menu */}
 			{isMenuOpen && (
 				<div className='md:hidden bg-gray-50 shadow-lg'>
-					<a
-						href='/'
+					import {Link} from "react-router-dom"; // Import Link from
+					react-router-dom
+					<Link
+						to='/'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
 						Home
-					</a>
-					<a
-						href='/FileUpload'
+					</Link>
+					<Link
+						to='/FileUpload'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
 						Upload
-					</a>
-					<a
-						href='/Dashboard/Mod-log'
+					</Link>
+					<Link
+						to='/Dashboard/Mod-log'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
 						Dashboard
-					</a>
-					<a
-						href='/features'
+					</Link>
+					<Link
+						to='/features'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
 						Features
-					</a>
-					<a
-						href='/about'
+					</Link>
+					<Link
+						to='/about'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
 						About
-					</a>
-					<a
-						href='/contributors'
+					</Link>
+					<Link
+						to='/contributors'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
 						Contributors
-					</a>
+					</Link>
 				</div>
 			)}
 		</nav>
