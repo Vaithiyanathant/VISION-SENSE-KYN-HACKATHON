@@ -112,11 +112,14 @@ const ModLog = () => {
 
 	return (
 		<>
-		
 			<div className='p-6 bg-[#f9fafb] min-h-screen'>
+				<div className='text-center mb-8'>
+					<h1 className='text-4xl font-bold text-blue-600'>Moderation Logs</h1>
+					<p className='text-lg text-gray-600 mt-2'></p>
+				</div>
+
 				{/* Header */}
-				<div className='flex items-center justify-between mb-6'>
-					<h1 className='text-2xl font-bold text-blue-500'>Moderation Logs</h1>
+				<div className='flex items-center justify-between mb-6'	>
 					<CSVLink
 						data={filteredData}
 						headers={headers}

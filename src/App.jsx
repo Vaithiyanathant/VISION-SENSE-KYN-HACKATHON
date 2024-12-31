@@ -10,6 +10,8 @@ import FileUpload from "./Pages/uibc/";
 import Dashboard from "./Pages/Dashboard";
 //import ModLog from "./Pages/ModLog";
 import ModAnalysis from "./Pages/ModAnalysis";
+import SocailHome from "./simlulationpages/SocailHome";
+import FeaturesHome from "./Pages/FeaturesHome";
 const App = () => {
 	return (
 		<>
@@ -17,6 +19,10 @@ const App = () => {
 				<Routes>
 					<Route
 						path='/'
+						element={<FeaturesHome />}
+					/>
+					<Route
+						path='/checkhome'
 						element={<Home />}
 					/>
 					<Route
@@ -39,10 +45,13 @@ const App = () => {
 						path='/Dashboard/Mod-log'
 						element={<Dashboard />}
 					/>
-
 					<Route
 						path='/Dashboard/Mod-analysis'
 						element={<ModAnalysis />}
+					/>
+					<Route
+						path='/SocailHome'
+						element={<SocailHome />}
 					/>
 				</Routes>
 			</Router>
