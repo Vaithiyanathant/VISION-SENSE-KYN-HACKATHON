@@ -19,7 +19,7 @@ const Navbar = () => {
 				{/* Logo and Empty Placeholder */}
 				<div className='flex items-center space-x-4'>
 					<div className='text-red-600 text-lg font-bold'>Vaith</div>
-					<div className='hidden sm:block w-32 lg:w-48 rounded-full px-3 py-2 '></div>
+					<div className='hidden sm:block w-32 lg:w-48 rounded-full px-3 py-2  '></div>
 				</div>
 
 				{/* Center Navigation Links */}
@@ -46,27 +46,27 @@ const Navbar = () => {
 
 				{/* Right Action Links */}
 				<div className='hidden md:flex items-center space-x-6'>
-					<a
-						href='/features'
+					<Link
+						to='/features'
 						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
 						Features
-					</a>
-					<a
-						href='/about'
+					</Link>
+					<Link
+						to='/about'
 						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
 						About
-					</a>
-					<a
-						href='/contributors'
+					</Link>
+					<Link
+						to='/contributors'
 						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
 						Contributors
-					</a>
+					</Link>
 					<div className='w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer' />
 				</div>
 
 				{/* Mobile Menu Icon */}
 				<div className='md:hidden'>
-					<LucideMoreVertical
+					<div
 						className='w-6 h-6 text-gray-700 cursor-pointer'
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					/>
@@ -76,8 +76,6 @@ const Navbar = () => {
 			{/* Mobile Dropdown Menu */}
 			{isMenuOpen && (
 				<div className='md:hidden bg-gray-50 shadow-lg'>
-					import {Link} from "react-router-dom"; // Import Link from
-					react-router-dom
 					<Link
 						to='/'
 						className='block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600'>
