@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FileUpload = () => {
+const UserDashboard = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const FileUpload = () => {
   )
 }
 
-export default FileUpload
+export default UserDashboard
