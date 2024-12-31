@@ -58,7 +58,7 @@ const FeaturesHome = () => {
 				<main className='text-center px-6 space-y-8 animate-slide-up'>
 					<p className='text-lg text-gray-500'>Introducing</p>
 					<h1 className='text-5xl md:text-6xl font-extrabold text-gray-800'>
-						Maverick <span className='text-purple-500'>AI</span>
+						Vaithi <span className='text-purple-500'>AI</span>
 					</h1>
 					<p className='text-xl text-gray-600'>
 						{text}
