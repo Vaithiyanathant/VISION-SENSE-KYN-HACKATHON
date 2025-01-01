@@ -228,17 +228,17 @@ Ensure the following are installed:
    ```
 2. Navigate to the Project Directory: Change your current directory to the project folder:
   ```bash
-      cd VISION-SENSE-KYN-HACKATHON
+    cd VISION-SENSE-KYN-HACKATHON
    ```
 3. Install Dependencies: Install the required dependencies using npm:
  ```bash
-       npm install  
-     
+    npm install  
    ```
  ```bash
-  npm run dev
-   
+    npm run dev
    ```
+
+
 
 <div>
   <h3>📚 Research Links & References</h3>
