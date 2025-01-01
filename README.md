@@ -135,7 +135,7 @@ The **Moderator Dashboard** is designed to provide an intuitive and powerful int
 
 The VisionSense tool is built using the following technologies:
 
-<div style="display: flex; align-items: flex-start;">
+<div style="display: flex; align-items: flex-start; align: center">
   <table align="center">
     <tr>
       <td align="center" width="96">
@@ -151,16 +151,25 @@ The VisionSense tool is built using the following technologies:
         <br>Firebase
       </td>
       <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=vercel" width="65" height="65" alt="Vercel" />
+        <br>Vercel
+      </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=vite" width="65" height="65" alt="Vite" />
+        <br>Vite
+      </td>
+      <td align="center" width="96">
         <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" />
         <br>JavaScript
       </td>
-      <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="Node.js" width="65" height="65" />
-        <br>Node.js
-      </td>
     </tr>
   </table>
+  <br><br>
 </div>
+
+---
+
+### Technology Stack and Features
 
 - **React**: For building an interactive user interface.
 - **Tailwind CSS**: For responsive and modern design.
@@ -168,6 +177,8 @@ The VisionSense tool is built using the following technologies:
 - **JavaScript**: For implementing core functionalities and enhancing interactivity.
 - **Node.js**: For server-side processing and APIs.
 - **BERT & R-CNN**: For text and image/video analysis.
+- **Vercel**: Deployment and hosting with a focus on speed and simplicity.
+- **Vite**: For fast and efficient development. Vite's blazing fast build tool offers a smooth development experience with minimal configuration.
 
 ---
 
