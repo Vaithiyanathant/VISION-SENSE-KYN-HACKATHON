@@ -4,11 +4,11 @@ Welcome to **VisionSense** – an AI-powered content moderation tool seamlessly 
 
 ## **Banner**
 
-![VisionSense Banner](https://drive.google.com/uc?id=1S-hZhsT4RCfDbTUMIUNm1xdSiVpLGPa4)
+![VisionSense Banner](https://drive.google.com/uc?id=1DFPkemXQjF4Oe_mb3g8492CLowD7zi0I)
 
 ## **Demo Video**
 
-[![Watch the Demo Video](https://drive.google.com/uc?id=1S-hZhsT4RCfDbTUMIUNm1xdSiVpLGPa4)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
+[![Watch the Demo Video](https://drive.google.com/uc?id=1DFPkemXQjF4Oe_mb3g8492CLowD7zi0I4)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
 
 ## **Why Choose VisionSense?**
 
