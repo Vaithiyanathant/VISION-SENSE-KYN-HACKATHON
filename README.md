@@ -162,6 +162,10 @@ The VisionSense tool is built using the following technologies:
         <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" />
         <br>JavaScript
       </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=nodejs" width="65" height="65" alt="Node.js" />
+        <br>Node.js
+      </td>
     </tr>
   </table>
   <br><br>
