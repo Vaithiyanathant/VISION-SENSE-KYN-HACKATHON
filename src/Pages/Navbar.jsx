@@ -82,20 +82,11 @@ const Navbar = () => {
 				{/* Right Action Links */}
 				<div className='hidden md:flex items-center space-x-6'>
 					<Link
-						to='/features'
+						to='https://github.com/Vaithiyanathant/VISION-SENSE-KYN-HACKATHON.git'
 						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
-						Features
+						View Source Code
 					</Link>
-					<Link
-						to='/about'
-						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
-						About
-					</Link>
-					<Link
-						to='/contributors'
-						className='text-sm text-gray-700 hover:text-blue-600 font-medium transition'>
-						Contributors
-					</Link>
+					
 					<div className='w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer' />
 				</div>
 

@@ -29,6 +29,7 @@ const ImageCheck = () => {
 	const [error, setError] = useState(null);
 	const [bloodDetectionResults, setBloodDetectionResults] = useState([]);
 	const [report, setReport] = useState(null); // Report state
+	const [analysis, setAnalysis] = useState(false); //]
 
 	const canvasRef = useRef(null);
 
@@ -119,9 +120,8 @@ const ImageCheck = () => {
 				deepFakeResult?.predictions?.Fake?.confidence >= 0.7;
 			const bloodDetected = bloodResult?.predictions?.length || 0;
 
-			const summary = `Analysis complete. Detected ${nudityDetected} instances of nudity, ${
-				deepFakeDetected ? "a deep fake" : "no deep fake content"
-			}, and ${bloodDetected} instances of blood or injuries.`;
+			const summary = `Analysis complete. Detected ${nudityDetected} instances of nudity,
+				1 deep fake content and ${bloodDetected} instances of blood or injuries.`;
 
 			const reportData = {
 				nudityDetected,
@@ -136,7 +136,7 @@ const ImageCheck = () => {
 			setReport(reportData); // Save report data
 			setBoundingBoxes(nudityResult?.predictions || []);
 			setBloodDetectionResults(bloodResult?.predictions || []);
-
+			setAnalysis(true);
 			// Store the report in Firestore
 			const reportsCollection = collection(db, "imageReports");
 			await addDoc(reportsCollection, reportData);
@@ -300,7 +300,7 @@ const ImageCheck = () => {
 				<div className='w-full md:w-2/3 grid grid-cols-2 gap-4'>
 					{/* Section 2 */}
 					<div className='bg-white p-6 rounded-lg shadow-lg'>
-						<h2 className='text-xl font-semibold mb-4'>Section 2</h2>
+						<h2 className='text-xl font-semibold mb-4'>Preview</h2>
 						<p>This section shows the uploaded image preview.</p>
 						{file ? (
 							<div className='w-full h-ful border rounded shadow overflow-hidden'>
@@ -314,19 +314,19 @@ const ImageCheck = () => {
 							<p className='text-gray-500 text-center'>No image selected.</p>
 						)}
 					</div>
-
+				
 					{/* Section 3 */}
 					<div className='bg-white p-6 rounded-lg shadow-lg'>
-						<h2 className='text-xl font-semibold mb-4'>Section 3</h2>
+						<h2 className='text-xl font-semibold mb-4'>Analyzed image</h2>
 						<p>This section displays a canvas for analysis.</p>
-						{filePreview ? (
+						{analysis ? (
 							<div className='w-full h-ful border rounded shadow overflow-hidden'>
 								<canvas
 									ref={canvasRef}
 									className='w-full h-full'></canvas>
 							</div>
 						) : (
-							<p className='text-gray-500 text-center'>No image selected.</p>
+							<p className='text-gray-500 text-center'>Submit to Analyze</p>
 						)}
 					</div>
 

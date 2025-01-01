@@ -70,18 +70,21 @@ const FeaturesHome = () => {
 
 					{/* Buttons */}
 					<div className='flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 justify-center'>
+						<Link to='https://youtu.be/IXCUdJDTnIo'>
 						<button className='px-8 py-4 text-lg text-blue-600 border border-blue-600 rounded-lg bg-blue-50 hover:bg-blue-100 transition shadow-md'>
 							Demo
 						</button>
-
+						</Link>
 						<Link to='/text'>
 							<button className='px-8 py-4 text-lg text-green-600 border border-green-600 rounded-lg bg-green-50 hover:bg-green-100 transition shadow-md'>
 								Get Started
 							</button>
 						</Link>
+						<Link to='https://github.com/Vaithiyanathant/VISION-SENSE-KYN-HACKATHON.git'>
 						<button className='px-8 py-4 text-lg text-purple-600 border border-purple-600 rounded-lg bg-purple-50 hover:bg-purple-100 transition shadow-md'>
 							View Features
 						</button>
+						</Link>
 					</div>
 				</main>
 
