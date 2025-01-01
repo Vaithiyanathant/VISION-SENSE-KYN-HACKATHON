@@ -15,9 +15,9 @@ const FeaturesHome = () => {
 
 	const [text] = useTypewriter({
 		words: [
-			"The future of content moderation.",
-			"Enhance your digital experience.",
-			"Join Maverick AI today.",
+    "The future of content moderation.",
+    "Enhance your digital experience.",
+    "Get started with VisionSense today.",
 		],
 		loop: 0,
 		typeSpeed: 50,
@@ -53,30 +53,33 @@ const FeaturesHome = () => {
 		<>
 			<Navbar></Navbar>
 
-			<div className='bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center justify-center font-sans relative'>
+			<div className='bg-gray-50 dotted-bg text-gray-800 min-h-screen flex flex-col items-center justify-center font-sans relative'>
 				{/* Hero Section */}
-				<main className='text-center px-6 space-y-8 animate-slide-up'>
-					<p className='text-lg text-gray-500'>Introducing</p>
-					<h1 className='text-5xl md:text-6xl font-extrabold text-gray-800'>
-						Vaithi <span className='text-purple-500'>AI</span>
+				<main className='text-center px-6 space-y-10 animate-slide-up'>
+					<p className='text-xl text-gray-500'>Introducing</p>
+					<h1 className='text-6xl md:text-7xl font-extrabold text-gray-800 '>
+						Vision{" "}
+						<span className='text-purple-500 animated-gradient-text'>
+							Sense
+						</span>
 					</h1>
-					<p className='text-xl text-gray-600'>
+					<p className='text-2xl text-gray-600'>
 						{text}
 						<span className='text-purple-500 blinking-cursor'>|</span>
 					</p>
 
 					{/* Buttons */}
-					<div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center'>
-						<button className='px-6 py-3 text-blue-600 border border-blue-600 rounded-lg bg-blue-50 hover:bg-blue-100 transition shadow-md'>
+					<div className='flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 justify-center'>
+						<button className='px-8 py-4 text-lg text-blue-600 border border-blue-600 rounded-lg bg-blue-50 hover:bg-blue-100 transition shadow-md'>
 							Demo
 						</button>
 
-						<Link to='/fileupload'>
-							<button className='px-6 py-3 text-green-600 border border-green-600 rounded-lg bg-green-50 hover:bg-green-100 transition shadow-md'>
+						<Link to='/text'>
+							<button className='px-8 py-4 text-lg text-green-600 border border-green-600 rounded-lg bg-green-50 hover:bg-green-100 transition shadow-md'>
 								Get Started
 							</button>
 						</Link>
-						<button className='px-6 py-3 text-purple-600 border border-purple-600 rounded-lg bg-purple-50 hover:bg-purple-100 transition shadow-md'>
+						<button className='px-8 py-4 text-lg text-purple-600 border border-purple-600 rounded-lg bg-purple-50 hover:bg-purple-100 transition shadow-md'>
 							View Features
 						</button>
 					</div>
@@ -84,7 +87,7 @@ const FeaturesHome = () => {
 
 				{/* Scroll Indicator */}
 				<div className='absolute bottom-10'>
-					<div className='w-3 h-3 rounded-full bg-gray-800 animate-bounce'></div>
+					<div className='w-4 h-4 rounded-full bg-gray-800 animate-bounce'></div>
 				</div>
 			</div>
 

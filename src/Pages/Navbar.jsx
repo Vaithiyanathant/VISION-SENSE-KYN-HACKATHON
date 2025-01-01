@@ -19,7 +19,12 @@ const Navbar = () => {
 			<div className='container mx-auto flex items-center justify-between px-4 py-3'>
 				{/* Logo */}
 				<div className='flex items-center space-x-4'>
-					<div className='text-red-600 text-lg font-bold'>Vaith</div>
+					<div className='text-red-600 text-lg font-bold'>
+						<h1 class='text-4xl font-bold'>
+							<span class='text-black'>Vision</span>
+							<span class='text-purple-500'>Sense</span>
+						</h1>
+					</div>
 				</div>
 
 				{/* Center Navigation Links */}

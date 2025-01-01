@@ -200,3 +200,23 @@
     transform: translateX(0);
   }
 }
+
+.dotted-bg {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0) 1px);
+    background-size: 20px 20px;
+    opacity: 1;
+}
+
+.animated-gradient-text {
+    background: linear-gradient(270deg, #6b46c1, #9f7aea, #805ad5, #6b46c1);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
