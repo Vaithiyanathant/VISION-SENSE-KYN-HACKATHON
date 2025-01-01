@@ -57,6 +57,8 @@ const Analysis = () => {
 		trends: "Line",
 	});
 
+	const graphColors = ["#4dc0b5", "#6a5acd", "#ffaf56", "#82ca9d"];
+
 	const renderChart = (data, chartType) => {
 		switch (chartType) {
 			case "Pie":
@@ -75,7 +77,7 @@ const Analysis = () => {
 							{data.map((entry, index) => (
 								<Cell
 									key={`cell-${index}`}
-									fill={["#42A5F5", "#64B5F6", "#90CAF9"][index % 3]}
+									fill={graphColors[index % graphColors.length]}
 								/>
 							))}
 						</Pie>
@@ -90,18 +92,16 @@ const Analysis = () => {
 						margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
 						<XAxis
 							dataKey='name'
-							stroke='#1E3A8A'
+							stroke='#333'
 						/>
-						<YAxis stroke='#1E3A8A' />
+						<YAxis stroke='#333' />
 						<Tooltip />
 						<Legend />
-						<Bar
-							dataKey='value'
-							fill='#42A5F5'>
+						<Bar dataKey='value'>
 							{data.map((entry, index) => (
 								<Cell
 									key={`cell-${index}`}
-									fill={["#42A5F5", "#64B5F6", "#90CAF9"][index % 3]}
+									fill={graphColors[index % graphColors.length]}
 								/>
 							))}
 						</Bar>
@@ -113,25 +113,29 @@ const Analysis = () => {
 						data={trendsOverTimeData}
 						margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
 						<CartesianGrid strokeDasharray='3 3' />
-						<XAxis dataKey='name' />
-						<YAxis />
+						<XAxis
+							dataKey='name'
+							stroke='#333'
+						/>
+						<YAxis stroke='#333' />
 						<Tooltip />
+						<Legend />
 						<Line
 							type='monotone'
 							dataKey='Clean'
-							stroke='#82ca9d'
+							stroke='#4dc0b5'
 							activeDot={{ r: 8 }}
 						/>
 						<Line
 							type='monotone'
 							dataKey='Flagged'
-							stroke='#8884d8'
+							stroke='#6a5acd'
 							activeDot={{ r: 8 }}
 						/>
 						<Line
 							type='monotone'
 							dataKey='Rejected'
-							stroke='#ff7300'
+							stroke='#ffaf56'
 							activeDot={{ r: 8 }}
 						/>
 					</LineChart>
@@ -142,26 +146,30 @@ const Analysis = () => {
 						data={trendsOverTimeData}
 						margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
 						<CartesianGrid strokeDasharray='3 3' />
-						<XAxis dataKey='name' />
-						<YAxis />
+						<XAxis
+							dataKey='name'
+							stroke='#333'
+						/>
+						<YAxis stroke='#333' />
 						<Tooltip />
+						<Legend />
 						<Area
 							type='monotone'
 							dataKey='Clean'
-							stroke='#82ca9d'
-							fill='#82ca9d'
+							stroke='#4dc0b5'
+							fill='#4dc0b5'
 						/>
 						<Area
 							type='monotone'
 							dataKey='Flagged'
-							stroke='#8884d8'
-							fill='#8884d8'
+							stroke='#6a5acd'
+							fill='#6a5acd'
 						/>
 						<Area
 							type='monotone'
 							dataKey='Rejected'
-							stroke='#ff7300'
-							fill='#ff7300'
+							stroke='#ffaf56'
+							fill='#ffaf56'
 						/>
 					</AreaChart>
 				);
@@ -174,52 +182,52 @@ const Analysis = () => {
 		<>
 			{/* Analytics Heading */}
 			<div className='text-center mb-8'>
-				<h1 className='text-4xl font-bold text-blue-600'>
+				<h1 className='text-4xl font-bold text-[#f15656]'>
 					Content Moderation Analytics
 				</h1>
-				<p className='text-lg text-gray-600 mt-2'>
+				<p className='text-lg text-black mt-2'>
 					Track the status of content moderation in real-time
 				</p>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10'>
-				<div className='p-6 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center'>
-					<div className='w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4'>
-						<span className='text-white text-3xl'>⛔</span>
-					</div>
-					<h2 className='text-md font-semibold text-red-500'>Total</h2>
-					<p className='text-4xl font-extrabold text-red-500 mt-2'>100</p>
-				</div>
 
-				<div className='p-6 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center'>
-					<div className='w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4'>
+			{/* Summary Cards */}
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10'>
+				<div className='p-6 bg-[#f9f9f9] rounded-lg shadow-lg flex flex-col items-center justify-center'>
+					<div className='w-12 h-12 bg-[#f15656] rounded-full flex items-center justify-center mb-4'>
+						<span className='text-white text-3xl'> 💻 </span>
+					</div>
+					<h2 className='text-md font-semibold text-[#f15656]'>Total</h2>
+					<p className='text-4xl font-extrabold text-[#f15656] mt-2'>100</p>
+				</div>
+				<div className='p-6 bg-[#f9f9f9] rounded-lg shadow-lg flex flex-col items-center justify-center'>
+					<div className='w-12 h-12 bg-[#00d26a] rounded-full flex items-center justify-center mb-4'>
 						<span className='text-white text-3xl'>✅</span>
 					</div>
-					<h2 className='text-md font-semibold text-green-500'>Clean</h2>
-					<p className='text-4xl font-extrabold text-green-500 mt-2'>50</p>
+					<h2 className='text-md font-semibold text-[#4dc0b5]'>Clean</h2>
+					<p className='text-4xl font-extrabold text-[#4dc0b5] mt-2'>50</p>
 				</div>
-
-				<div className='p-6 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center'>
-					<div className='w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mb-4'>
+				<div className='p-6 bg-[#f9f9f9] rounded-lg shadow-lg flex flex-col items-center justify-center'>
+					<div className='w-12 h-12 bg-[#6a5acd] rounded-full flex items-center justify-center mb-4'>
 						<span className='text-white text-3xl'>🚨</span>
 					</div>
-					<h2 className='text-md font-semibold text-yellow-500'>Flagged</h2>
-					<p className='text-4xl font-extrabold text-yellow-500 mt-2'>50</p>
+					<h2 className='text-md font-semibold text-[#6a5acd]'>Flagged</h2>
+					<p className='text-4xl font-extrabold text-[#6a5acd] mt-2'>50</p>
 				</div>
-
-				<div className='p-6 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center'>
-					<div className='w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4'>
+				<div className='p-6 bg-[#f9f9f9] rounded-lg shadow-lg flex flex-col items-center justify-center'>
+					<div className='w-12 h-12 bg-[#f8312f] rounded-full flex items-center justify-center mb-4'>
 						<span className='text-white text-3xl'>⛔</span>
 					</div>
-					<h2 className='text-md font-semibold text-red-500'>Rejected</h2>
-					<p className='text-4xl font-extrabold text-red-500 mt-2'>20</p>
+					<h2 className='text-md font-semibold text-[#ffaf56]'>Rejected</h2>
+					<p className='text-4xl font-extrabold text-[#ffaf56] mt-2'>20</p>
 				</div>
 			</div>
-			{/* Render Charts */}
+
+			{/* Charts */}
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
 				<div className='p-6 bg-white rounded-xl shadow-lg border'>
 					<div className='flex justify-center mb-4'>
 						<select
-							className='px-4 py-2 rounded-lg border text-black bg-blue-500 text-white hover:bg-blue-600'
+							className='px-4 py-2 rounded-lg border text-black bg-[#5a67d8] text-white hover:bg-[#4dc0b5]'
 							value={selectedChartType.contentType}
 							onChange={(e) =>
 								setSelectedChartType((prev) => ({
@@ -246,7 +254,7 @@ const Analysis = () => {
 				<div className='p-6 bg-white rounded-xl shadow-lg border'>
 					<div className='flex justify-center mb-4'>
 						<select
-							className='px-4 py-2 rounded-lg border text-black bg-blue-500 text-white hover:bg-blue-600'
+							className='px-4 py-2 rounded-lg border text-black bg-[#5a67d8] text-white hover:bg-[#4dc0b5]'
 							value={selectedChartType.userInsights}
 							onChange={(e) =>
 								setSelectedChartType((prev) => ({
@@ -270,7 +278,7 @@ const Analysis = () => {
 				<div className='p-6 bg-white rounded-xl shadow-lg border'>
 					<div className='flex justify-center mb-4'>
 						<select
-							className='px-4 py-2 rounded-lg border text-black bg-blue-500 text-white hover:bg-blue-600'
+							className='px-4 py-2 rounded-lg border text-black bg-[#5a67d8] text-white hover:bg-[#4dc0b5]'
 							value={selectedChartType.confidenceScore}
 							onChange={(e) =>
 								setSelectedChartType((prev) => ({
@@ -297,7 +305,7 @@ const Analysis = () => {
 				<div className='p-6 bg-white rounded-xl shadow-lg border'>
 					<div className='flex justify-center mb-4'>
 						<select
-							className='px-4 py-2 rounded-lg border text-black bg-blue-500 text-white hover:bg-blue-600'
+							className='px-4 py-2 rounded-lg border text-black bg-[#5a67d8] text-white hover:bg-[#4dc0b5]'
 							value={selectedChartType.trends}
 							onChange={(e) =>
 								setSelectedChartType((prev) => ({
