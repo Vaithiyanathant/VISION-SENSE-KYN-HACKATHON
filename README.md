@@ -171,7 +171,6 @@ The VisionSense tool is built using the following technologies:
   <br><br>
 </div>
 
----
 
 ### Technology Stack and Features
 
