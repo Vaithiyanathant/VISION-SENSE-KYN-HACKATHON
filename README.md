@@ -183,7 +183,7 @@ The VisionSense tool is built using the following technologies:
 # 📄 Text Analysis Page
 ![Screenshot 3](https://drive.google.com/uc?export=view&id=1PXZfR_A1uSj69vrehhIxSDQ87BEeos8w)
 
-# 🛡️ Moderation Page with Filter
+# 🛡️ Moderation log Page with Filter
 ![Screenshot 6](https://drive.google.com/uc?export=view&id=1f_ORnHBs6p6VGhKH0Qsjf09B1pQZlC-f)
 
 # 📊 Analytics, 🌍 Graphs, 🗺️ Heap Map, and 📈 Dynamic Charts
