@@ -4,14 +4,9 @@
 
 Welcome to **VisionSense** – an AI-powered content moderation tool seamlessly integrating with social media platforms to analyze text, images, videos, and live streams. Designed to detect harmful content automatically, VisionSense ensures the integrity of your social media environment with unmatched efficiency.
 
-## **Banner**
-
-![VisionSense Banner](https://drive.google.com/uc?id=1DFPkemXQjF4Oe_mb3g8492CLowD7zi0I)
-
 ## **Demo Video**
 
 [![Watch the Demo Video](https://drive.google.com/uc?id=14dedk5gXt5J88ikcz5XO7lHXhT1hhZP2)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
-[![Watch the Demo Video](https://img.youtube.com/vi/IXCUdJDTnIo/0.jpg)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
 
 ## **Why Choose VisionSense?**
 
