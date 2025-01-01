@@ -194,7 +194,7 @@ The VisionSense tool is built using the following technologies:
 ![Screenshot 5](https://drive.google.com/uc?export=view&id=1Wz44WbmvLSE1P_oG9OY26IgImn02tOnF)
 
 # 🖼️ Video Analysis Page
-![Screenshot Example](https://drive.google.com/uc?export=view&id=1byBlu0MWTtIDkY05YM6CakZbAlFrf-No)
+![Video Analysis Image](https://drive.google.com/uc?export=view&id=1l4q6S-QTjO6QuiLMJW0EZJ8rTykE64c3)
 
 # 📄 Text Analysis Page
 ![Screenshot 3](https://drive.google.com/uc?export=view&id=1PXZfR_A1uSj69vrehhIxSDQ87BEeos8w)
