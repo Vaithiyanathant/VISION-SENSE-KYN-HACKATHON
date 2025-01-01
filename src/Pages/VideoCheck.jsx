@@ -5,6 +5,7 @@ import axios from "axios";
 import { db } from "../../firebase"; // Import Firestore instance
 import { collection, addDoc } from "firebase/firestore"; // Firestore functions
 import Loader from "./Loader";
+import Navbar from "./Navbar";
 
 const VideoCheck = () => {
 	const [render, setRender] = useState(false);
@@ -187,6 +188,8 @@ const VideoCheck = () => {
 
 	return (
 		<>
+			<Navbar />
+
 			<div className='flex flex-row min-h-screen bg-[#f9f9f9] p-6 gap-4'>
 				{/* Left Column */}
 				<div className='w-full md:w-1/3 bg-white p-6 rounded-lg shadow-lg'>

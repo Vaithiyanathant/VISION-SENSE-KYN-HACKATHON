@@ -12,6 +12,7 @@ import Dashboard from "./Pages/Dashboard";
 import ModAnalysis from "./Pages/ModAnalysis";
 import SocailHome from "./simlulationpages/SocailHome";
 import FeaturesHome from "./Pages/FeaturesHome";
+import LiveStream from "./Pages/LiveStream";
 const App = () => {
 	return (
 		<>
@@ -38,7 +39,7 @@ const App = () => {
 						element={<VideoCheck />}
 					/>
 					<Route
-						path='/FileUpload'
+						path='/text'
 						element={<FileUpload />}
 					/>
 					<Route
@@ -53,7 +54,10 @@ const App = () => {
 						path='/SocailHome'
 						element={<SocailHome />}
 					/>
-
+					<Route
+						path='/live-stream'
+						element={<LiveStream />}
+					/>
 				</Routes>
 			</Router>
 		</>

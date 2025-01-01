@@ -6,196 +6,218 @@ import { Input } from "../components/ui/input";
 import axios from "axios";
 import { db } from "../../firebase"; // Import the Firestore instance
 import { collection, addDoc } from "firebase/firestore"; // Firestore functions
+import Navbar from "./Navbar";
 
 const loadImageBase64 = (file) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = (error) => reject(error);
-  });
+	return new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = () => resolve(reader.result);
+		reader.onerror = (error) => reject(error);
+	});
 };
 
 const ImageCheck = () => {
-  const [file, setFile] = useState(null); // Uploaded media file
-  const [filePreview, setFilePreview] = useState(null); // File preview URL
-  const [boundingBoxes, setBoundingBoxes] = useState([]); // Bounding box data
-  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 }); // Image dimensions
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [bloodDetectionResults, setBloodDetectionResults] = useState([]);
-  const [report, setReport] = useState(null); // Report state
+	const [file, setFile] = useState(null); // Uploaded media file
+	const [filePreview, setFilePreview] = useState(null); // File preview URL
+	const [boundingBoxes, setBoundingBoxes] = useState([]); // Bounding box data
+	const [imageDimensions, setImageDimensions] = useState({
+		width: 0,
+		height: 0,
+	}); // Image dimensions
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState(null);
+	const [bloodDetectionResults, setBloodDetectionResults] = useState([]);
+	const [report, setReport] = useState(null); // Report state
 
-  const canvasRef = useRef(null);
+	const canvasRef = useRef(null);
 
-  // Handle file input change
-  const handleFileChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      const selectedFile = event.target.files[0];
-      setFile(selectedFile);
-      setFilePreview(URL.createObjectURL(selectedFile));
-      setBoundingBoxes([]); // Reset bounding boxes for a new file
-      setReport(null); // Reset report for a new file
-    }
-  };
+	// Handle file input change
+	const handleFileChange = (event) => {
+		if (event.target.files && event.target.files[0]) {
+			const selectedFile = event.target.files[0];
+			setFile(selectedFile);
+			setFilePreview(URL.createObjectURL(selectedFile));
+			setBoundingBoxes([]); // Reset bounding boxes for a new file
+			setReport(null); // Reset report for a new file
+		}
+	};
 
-  // API Calls
-  const checkSensitiveMedia = useCallback(async (base64) => {
-    try {
-      const response = await axios.post(
-        "https://detect.roboflow.com/explicit/1",
-        base64,
-        {
-          params: { api_key: "77NfUfT1hzpTIkkF3h3F" },
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        }
-      );
-      return response.data;
-    } catch (err) {
-      console.error("Error in nudity detection:", err.message);
-      return null;
-    }
-  }, []);
+	// API Calls
+	const checkSensitiveMedia = useCallback(async (base64) => {
+		try {
+			const response = await axios.post(
+				"https://detect.roboflow.com/explicit/1",
+				base64,
+				{
+					params: { api_key: "77NfUfT1hzpTIkkF3h3F" },
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				}
+			);
+			return response.data;
+		} catch (err) {
+			console.error("Error in nudity detection:", err.message);
+			return null;
+		}
+	}, []);
 
-  const checkDeepFake = useCallback(async (base64) => {
-    try {
-      const response = await axios.post(
-        "https://classify.roboflow.com/deep-fake-detection-xxa8f/1",
-        base64,
-        {
-          params: { api_key: "77NfUfT1hzpTIkkF3h3F" },
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        }
-      );
-      return response.data;
-    } catch (err) {
-      console.error("Error in deep fake detection:", err.message);
-      return null;
-    }
-  }, []);
+	const checkDeepFake = useCallback(async (base64) => {
+		try {
+			const response = await axios.post(
+				"https://classify.roboflow.com/deep-fake-detection-xxa8f/1",
+				base64,
+				{
+					params: { api_key: "77NfUfT1hzpTIkkF3h3F" },
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				}
+			);
+			return response.data;
+		} catch (err) {
+			console.error("Error in deep fake detection:", err.message);
+			return null;
+		}
+	}, []);
 
-  const checkBloodDetection = useCallback(async (base64) => {
-    try {
-      const response = await axios.post(
-        "https://detect.roboflow.com/sensitive-content-2-1vqje/1",
-        base64,
-        {
-          params: { api_key: "77NfUfT1hzpTIkkF3h3F" },
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        }
-      );
-      return response.data;
-    } catch (err) {
-      console.error("Error in blood detection:", err.message);
-      return null;
-    }
-  }, []);
+	const checkBloodDetection = useCallback(async (base64) => {
+		try {
+			const response = await axios.post(
+				"https://detect.roboflow.com/sensitive-content-2-1vqje/1",
+				base64,
+				{
+					params: { api_key: "77NfUfT1hzpTIkkF3h3F" },
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				}
+			);
+			return response.data;
+		} catch (err) {
+			console.error("Error in blood detection:", err.message);
+			return null;
+		}
+	}, []);
 
-  const handleSubmit = async () => {
-    if (!file) {
-      alert("Please upload an image file!");
-      return;
-    }
+	const handleSubmit = async () => {
+		if (!file) {
+			alert("Please upload an image file!");
+			return;
+		}
 
-    try {
-      const base64 = await loadImageBase64(file);
+		try {
+			const base64 = await loadImageBase64(file);
 
-      setIsLoading(true);
-      setError(null);
+			setIsLoading(true);
+			setError(null);
 
-      const [nudityResult, deepFakeResult, bloodResult] = await Promise.all([
-        checkSensitiveMedia(base64),
-        checkDeepFake(base64),
-        checkBloodDetection(base64),
-      ]);
+			const [nudityResult, deepFakeResult, bloodResult] = await Promise.all([
+				checkSensitiveMedia(base64),
+				checkDeepFake(base64),
+				checkBloodDetection(base64),
+			]);
 
-      // Create the report
-      const nudityDetected = nudityResult?.predictions?.length || 0;
-      const deepFakeDetected = deepFakeResult?.predictions?.Fake?.confidence >= 0.7;
-      const bloodDetected = bloodResult?.predictions?.length || 0;
+			// Create the report
+			const nudityDetected = nudityResult?.predictions?.length || 0;
+			const deepFakeDetected =
+				deepFakeResult?.predictions?.Fake?.confidence >= 0.7;
+			const bloodDetected = bloodResult?.predictions?.length || 0;
 
-      const summary = `Analysis complete. Detected ${nudityDetected} instances of nudity, ${
-        deepFakeDetected ? "a deep fake" : "no deep fake content"
-      }, and ${bloodDetected} instances of blood or injuries.`;
+			const summary = `Analysis complete. Detected ${nudityDetected} instances of nudity, ${
+				deepFakeDetected ? "a deep fake" : "no deep fake content"
+			}, and ${bloodDetected} instances of blood or injuries.`;
 
-      const reportData = {
-        nudityDetected,
-        deepFakeDetected,
-        bloodDetected,
-        summary,
-        nudityDetails: nudityResult?.predictions || [],
-        bloodDetails: bloodResult?.predictions || [],
-        timestamp: new Date().toISOString(),
-      };
+			const reportData = {
+				nudityDetected,
+				deepFakeDetected,
+				bloodDetected,
+				summary,
+				nudityDetails: nudityResult?.predictions || [],
+				bloodDetails: bloodResult?.predictions || [],
+				timestamp: new Date().toISOString(),
+			};
 
-      setReport(reportData); // Save report data
-      setBoundingBoxes(nudityResult?.predictions || []);
-      setBloodDetectionResults(bloodResult?.predictions || []);
+			setReport(reportData); // Save report data
+			setBoundingBoxes(nudityResult?.predictions || []);
+			setBloodDetectionResults(bloodResult?.predictions || []);
 
-      // Store the report in Firestore
-      const reportsCollection = collection(db, "imageReports");
-      await addDoc(reportsCollection, reportData);
+			// Store the report in Firestore
+			const reportsCollection = collection(db, "imageReports");
+			await addDoc(reportsCollection, reportData);
 
-      console.log("Report saved to Firestore.");
-    } catch (err) {
-      console.error("Error during analysis:", err.message);
-      setError(`Error during analysis: ${err.message}`);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+			console.log("Report saved to Firestore.");
+		} catch (err) {
+			console.error("Error during analysis:", err.message);
+			setError(`Error during analysis: ${err.message}`);
+		} finally {
+			setIsLoading(false);
+		}
+	};
 
-  useEffect(() => {
-    if (filePreview && canvasRef.current) {
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      const img = new Image();
-      img.src = filePreview;
+	useEffect(() => {
+		if (filePreview && canvasRef.current) {
+			const canvas = canvasRef.current;
+			const ctx = canvas.getContext("2d");
+			const img = new Image();
+			img.src = filePreview;
 
-      img.onload = () => {
-        // Set canvas dimensions to match the image
-        canvas.width = img.width;
-        canvas.height = img.height;
-        setImageDimensions({ width: img.width, height: img.height });
+			img.onload = () => {
+				// Set canvas dimensions to match the image
+				canvas.width = img.width;
+				canvas.height = img.height;
+				setImageDimensions({ width: img.width, height: img.height });
 
-        // Clear and draw the image as the base layer
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, img.width, img.height);
+				// Clear and draw the image as the base layer
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.drawImage(img, 0, 0, img.width, img.height);
 
-        // Draw bounding boxes
-        boundingBoxes.forEach((box) => {
-          const { x, y, width, height, class: className, confidence } = box;
-          const topLeftX = x - width / 2;
-          const topLeftY = y - height / 2;
-          ctx.strokeStyle = "yellow";
-          ctx.lineWidth = 2;
-          ctx.strokeRect(topLeftX, topLeftY, width, height);
-          ctx.font = "16px Arial";
-          ctx.fillStyle = "yellow";
-          ctx.fillText(`${className} (${(confidence * 100).toFixed(1)}%)`, topLeftX, topLeftY - 10);
-        });
+				// Draw bounding boxes
+				boundingBoxes.forEach((box) => {
+					const { x, y, width, height, class: className, confidence } = box;
+					const topLeftX = x - width / 2;
+					const topLeftY = y - height / 2;
+					ctx.strokeStyle = "yellow";
+					ctx.lineWidth = 2;
+					ctx.strokeRect(topLeftX, topLeftY, width, height);
+					ctx.font = "16px Arial";
+					ctx.fillStyle = "yellow";
+					ctx.fillText(
+						`${className} (${(confidence * 100).toFixed(1)}%)`,
+						topLeftX,
+						topLeftY - 10
+					);
+				});
 
-        bloodDetectionResults.forEach((prediction) => {
-          const { x, y, width, height, confidence, class: className } = prediction;
-          const topLeftX = x - width / 2;
-          const topLeftY = y - height / 2;
-          ctx.strokeStyle = "red";
-          ctx.lineWidth = 2;
-          ctx.strokeRect(topLeftX, topLeftY, width, height);
-          ctx.font = "16px Arial";
-          ctx.fillStyle = "red";
-          ctx.fillText(`${className} (${(confidence * 100).toFixed(1)}%)`, topLeftX, topLeftY - 10);
-        });
-      };
+				bloodDetectionResults.forEach((prediction) => {
+					const {
+						x,
+						y,
+						width,
+						height,
+						confidence,
+						class: className,
+					} = prediction;
+					const topLeftX = x - width / 2;
+					const topLeftY = y - height / 2;
+					ctx.strokeStyle = "red";
+					ctx.lineWidth = 2;
+					ctx.strokeRect(topLeftX, topLeftY, width, height);
+					ctx.font = "16px Arial";
+					ctx.fillStyle = "red";
+					ctx.fillText(
+						`${className} (${(confidence * 100).toFixed(1)}%)`,
+						topLeftX,
+						topLeftY - 10
+					);
+				});
+			};
 
-      img.onerror = () => {
-        console.error("Failed to load image");
-      };
-    }
-  }, [filePreview, boundingBoxes, bloodDetectionResults]);
+			img.onerror = () => {
+				console.error("Failed to load image");
+			};
+		}
+	}, [filePreview, boundingBoxes, bloodDetectionResults]);
 
-  return (
+	return (
 		<>
+			<Navbar />
+
 			<div className='flex flex-row min-h-screen bg-gray-100 p-6 gap-4'>
 				{/* Left Column */}
 				<div className='w-full md:w-1/3 bg-white p-6 rounded-lg shadow-lg'>
@@ -250,27 +272,27 @@ const ImageCheck = () => {
 						</div>
 
 						{/* Post Preview */}
-						<div className="flex flex-col items-center justify-center bg-[#ffffff] p-6 rounded-lg shadow-lg w-full max-w-sm mt-6 mx-auto">
-  <h2 className="text-xl font-semibold mb-4 text-black">Post Preview</h2>
-  {file ? (
-    <div className="w-full h-64 border rounded shadow overflow-hidden">
-      <img
-        src={URL.createObjectURL(file)}
-        alt="Uploaded Post"
-        className="object-cover w-full h-full"
-      />
-    </div>
-  ) : (
-    <p className="text-gray-500 text-center">No image selected.</p>
-  )}
-  <button
-    className="mt-4 bg-[#f15656] text-white py-2 px-6 rounded hover:bg-[#d14e4e] w-full transition"
-    onClick={() => alert("Post Published!")}
-  >
-    Publish
-  </button>
-</div>
-
+						<div className='flex flex-col items-center justify-center bg-[#ffffff] p-6 rounded-lg shadow-lg w-full max-w-sm mt-6 mx-auto'>
+							<h2 className='text-xl font-semibold mb-4 text-black'>
+								Post Preview
+							</h2>
+							{file ? (
+								<div className='w-full h-64 border rounded shadow overflow-hidden'>
+									<img
+										src={URL.createObjectURL(file)}
+										alt='Uploaded Post'
+										className='object-cover w-full h-full'
+									/>
+								</div>
+							) : (
+								<p className='text-gray-500 text-center'>No image selected.</p>
+							)}
+							<button
+								className='mt-4 bg-[#f15656] text-white py-2 px-6 rounded hover:bg-[#d14e4e] w-full transition'
+								onClick={() => alert("Post Published!")}>
+								Publish
+							</button>
+						</div>
 					</div>
 				</div>
 
