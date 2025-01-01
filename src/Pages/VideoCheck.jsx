@@ -306,7 +306,7 @@ const VideoCheck = () => {
 								<button
 									onClick={processFrameByFrame}
 									className='mt-4 p-2 bg-[#f15656] text-white rounded hover:bg-[#d14e4e]'>
-									Process Frame by Frame
+									Process video
 								</button>
 							</div>
 						)}
