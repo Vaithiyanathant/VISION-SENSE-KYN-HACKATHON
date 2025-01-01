@@ -180,6 +180,7 @@ The VisionSense tool is built using the following technologies:
 - **JavaScript**: For implementing core functionalities and enhancing interactivity.
 - **Node.js**: For server-side processing and APIs.
 - **BERT & R-CNN**: For text and image/video analysis.
+- **YOLOv11**: State-of-the-art object detection model optimized for real-time image and video analysis with high accuracy and efficiency.
 - **Vercel**: Deployment and hosting with a focus on speed and simplicity.
 - **Vite**: For fast and efficient development. Vite's blazing fast build tool offers a smooth development experience with minimal configuration.
 
@@ -220,26 +221,61 @@ Ensure the following are installed:
 
 ### Installation Steps
 
-1. Clone the repository:
 
+1. Clone the Repository: Start by cloning the repository to your local machine. Open your terminal and run the following command:
+   ```bash
    git clone https://github.com/Vaithiyanathant/VISION-SENSE-KYN-HACKATHON.git
-   cd VISION-SENSE-KYN-HACKATHON
-   npm install  
-    npm start dev
+   ```
+2. Navigate to the Project Directory: Change your current directory to the project folder:
+  ```bash
+      cd VISION-SENSE-KYN-HACKATHON
+   ```
+3. Install Dependencies: Install the required dependencies using npm:
+ ```bash
+       npm install  
+     
+   ```
+ ```bash
+  npm run dev
+   
+   ```
 
-###Research Links & References
-
-BERT NLP Model:
-https://huggingface.co/transformers/model_doc/bert.html
-
-R-CNN Model:
-https://arxiv.org/abs/1311.2524
-
-Firebase Documentation:
-https://firebase.google.com/docs
-
-React.js Documentation:
-https://reactjs.org/docs/getting-started.html
-
-Node.js with Express.js:
-https://expressjs.com/en/starter/installing.html
+<div>
+  <h3>📚 Research Links & References</h3>
+  <table border="1" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th style="padding: 10px; text-align: left;">Topic</th>
+        <th style="padding: 10px; text-align: left;">Description</th>
+        <th style="padding: 10px; text-align: left;">Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px;">BERT NLP Model</td>
+        <td style="padding: 10px;">Documentation for BERT, a powerful natural language processing model by Hugging Face.</td>
+        <td style="padding: 10px;"><a href="https://huggingface.co/transformers/model_doc/bert.html" target="_blank">Hugging Face BERT Documentation</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">R-CNN Model</td>
+        <td style="padding: 10px;">Research paper on Region-based Convolutional Neural Networks for object detection.</td>
+        <td style="padding: 10px;"><a href="https://arxiv.org/abs/1311.2524" target="_blank">R-CNN Research Paper</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Firebase Documentation</td>
+        <td style="padding: 10px;">Official guide for Firebase, including setup, data storage, and hosting.</td>
+        <td style="padding: 10px;"><a href="https://firebase.google.com/docs" target="_blank">Firebase Official Documentation</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">React.js Documentation</td>
+        <td style="padding: 10px;">Comprehensive guide to building user interfaces with React.js.</td>
+        <td style="padding: 10px;"><a href="https://reactjs.org/docs/getting-started.html" target="_blank">React Official Documentation</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Node.js with Express.js</td>
+        <td style="padding: 10px;">Step-by-step tutorial for creating server-side applications with Node.js and Express.js.</td>
+        <td style="padding: 10px;"><a href="https://expressjs.com/en/starter/installing.html" target="_blank">Express.js Getting Started Guide</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
