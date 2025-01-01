@@ -9,10 +9,10 @@ import ModLog from "./ModLog";
 const Dashboard = () => {
 	return (
 		<>
-			<Navbar></Navbar>
-			<div className='flex h-screen bg-gray-100'>
+			<Navbar />
+			<div className='flex h-screen bg-[#f9f9f9]'>
 				{/* Sidebar */}
-				<div className='w-64 bg-white shadow-md hidden md:block'>
+				<div className='w-64 bg-[#ffffff] shadow-md hidden md:block'>
 					<Sidebar
 						links={[
 							{
@@ -23,11 +23,12 @@ const Dashboard = () => {
 						]}
 					/>
 				</div>
-				{/* Main Content */}
 
-				{/* Page Content */}
-				<div className='p-6 flex-1 bg-[#f9fafb] overflow-y-auto'>
-					<ModLog />
+				{/* Main Content */}
+				<div className='p-6 flex-1 bg-[#f9f9f9] overflow-y-auto'>
+					<div className='bg-[#ffffff] shadow-lg rounded-lg p-6'>
+						<ModLog />
+					</div>
 				</div>
 			</div>
 		</>

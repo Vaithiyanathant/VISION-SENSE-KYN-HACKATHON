@@ -27,8 +27,6 @@ const Sidebar = () => {
 
 	return (
 		<div className='bg-white h-screen w-64 flex flex-col text-gray-700 border-r shadow-md'>
-			
-
 			{/* Navigation Links */}
 			<nav className='flex-1 overflow-y-auto p-4'>
 				<ul className='space-y-2'>
@@ -38,8 +36,8 @@ const Sidebar = () => {
 								to={link.path}
 								className={`flex items-center px-4 py-2 rounded-lg transition-colors ${
 									location.pathname === link.path
-										? "bg-blue-500 text-white"
-										: "text-gray-700 hover:bg-blue-100 hover:text-blue-500"
+										? "bg-[#f15656] text-white"
+										: "text-gray-700 hover:bg-blue-100 hover:text-[#f15656]"
 								}`}>
 								{link.icon}
 								<span>{link.name}</span>

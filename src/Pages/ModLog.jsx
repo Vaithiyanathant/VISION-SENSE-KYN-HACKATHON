@@ -112,19 +112,19 @@ const ModLog = () => {
 
 	return (
 		<>
-			<div className='p-6 bg-[#f9fafb] min-h-screen'>
+			<div className='p-6 bg-[#ffffff] min-h-screen'>
 				<div className='text-center mb-8'>
-					<h1 className='text-4xl font-bold text-blue-600'>Moderation Logs</h1>
-					<p className='text-lg text-gray-600 mt-2'></p>
+					<h1 className='text-4xl font-bold text-[#f15656]'>Moderation Logs</h1>
+					<p className='text-lg text-black mt-2'></p>
 				</div>
 
 				{/* Header */}
-				<div className='flex items-center justify-between mb-6'	>
+				<div className='flex items-center justify-between mb-6'>
 					<CSVLink
 						data={filteredData}
 						headers={headers}
 						filename={`moderation_logs_${new Date().toISOString()}.csv`}
-						className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600'>
+						className='px-4 py-2 bg-[#f15656] text-white rounded-md hover:bg-[#b42f2f]'>
 						Export as CSV
 					</CSVLink>
 				</div>
@@ -136,14 +136,14 @@ const ModLog = () => {
 						placeholder='Search by Content ID or Submitted By'
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className='w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
+						className='w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f15656]'
 					/>
 					<select
 						value={filters.contentType}
 						onChange={(e) =>
 							setFilters((prev) => ({ ...prev, contentType: e.target.value }))
 						}
-						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'>
+						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f15656]'>
 						<option value='All'>All Content Types</option>
 						<option value='Text'>Text</option>
 						<option value='Image'>Image</option>
@@ -157,7 +157,7 @@ const ModLog = () => {
 								moderationStatus: e.target.value,
 							}))
 						}
-						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'>
+						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f15656]'>
 						<option value='All'>All Moderation Status</option>
 						<option value='Clean'>Clean</option>
 						<option value='Flagged'>Flagged</option>
@@ -168,7 +168,7 @@ const ModLog = () => {
 						onChange={(e) =>
 							setFilters((prev) => ({ ...prev, violationType: e.target.value }))
 						}
-						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'>
+						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f15656]'>
 						<option value='All'>All Violation Types</option>
 						<option value='Hate Speech'>Hate Speech</option>
 						<option value='Violence'>Violence</option>
@@ -184,7 +184,7 @@ const ModLog = () => {
 								confidenceScore: e.target.value,
 							}))
 						}
-						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'>
+						className='px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f15656]'>
 						<option value='All'>All Confidence Scores</option>
 						<option value='Below 50%'>Below 50% (Low)</option>
 						<option value='50%-80%'>50%-80% (Moderate)</option>
@@ -193,10 +193,10 @@ const ModLog = () => {
 				</div>
 
 				{/* Table */}
-				<div className='overflow-x-auto bg-white shadow-md rounded-md'>
+				<div className='overflow-x-auto bg-[#f9f9f9] shadow-md rounded-md'>
 					<table className='min-w-full border-collapse'>
 						<thead>
-							<tr className='bg-blue-500 text-white'>
+							<tr className='bg-[#f15656] text-white'>
 								<th className='py-3 px-6 text-left whitespace-nowrap'>
 									Content ID
 								</th>
@@ -236,7 +236,7 @@ const ModLog = () => {
 									<td className='py-3 px-6'>
 										<button
 											onClick={() => setPreviewContent(item.previewUrl)}
-											className='px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600'>
+											className='px-3 py-1 bg-[#f15656] text-white rounded-md hover:bg-[#b42f2f]'>
 											Preview
 										</button>
 									</td>
@@ -244,7 +244,7 @@ const ModLog = () => {
 									<td
 										className={`py-3 px-6 font-semibold ${
 											item.moderationStatus === "Flagged"
-												? "text-red-600"
+												? "text-[#f15656]"
 												: item.moderationStatus === "Clean"
 												? "text-green-500"
 												: "text-yellow-500"
@@ -260,7 +260,7 @@ const ModLog = () => {
 										<button className='px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600 mr-2'>
 											Approve
 										</button>
-										<button className='px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600'>
+										<button className='px-3 py-1 bg-[#f15656] text-white rounded-md hover:bg-[#b42f2f]'>
 											Reject
 										</button>
 									</td>
@@ -289,7 +289,7 @@ const ModLog = () => {
 							</div>
 							<button
 								onClick={() => setPreviewContent(null)}
-								className='px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600'>
+								className='px-4 py-2 bg-[#f15656] text-white rounded-md hover:bg-[#b42f2f]'>
 								Close
 							</button>
 						</div>
