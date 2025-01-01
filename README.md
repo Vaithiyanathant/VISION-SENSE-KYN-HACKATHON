@@ -10,7 +10,8 @@ Welcome to **VisionSense** – an AI-powered content moderation tool seamlessly 
 
 ## **Demo Video**
 
-[![Watch the Demo Video](https://drive.google.com/uc?id=1DFPkemXQjF4Oe_mb3g8492CLowD7zi0I4)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
+[![Watch the Demo Video](https://drive.google.com/uc?id=14dedk5gXt5J88ikcz5XO7lHXhT1hhZP2)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
+[![Watch the Demo Video](https://img.youtube.com/vi/IXCUdJDTnIo/0.jpg)](https://www.youtube.com/watch?v=IXCUdJDTnIo&autoplay=1)
 
 ## **Why Choose VisionSense?**
 
