@@ -76,6 +76,62 @@ Ensure the following are installed:
 
 
 
+## 🛠️ Tech Stack
+
+The VisionSense tool is built using the following technologies:
+
+<div style="display: flex; align-items: flex-start; align: center">
+  <table align="center">
+    <tr>
+      <td align="center" width="96">
+        <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="React" width="65" height="65" />
+        <br>React
+      </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=tailwind" width="65" height="65" alt="Tailwind CSS" />
+        <br>Tailwind
+      </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=firebase" width="65" height="65" alt="Firebase" />
+        <br>Firebase
+      </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=vercel" width="65" height="65" alt="Vercel" />
+        <br>Vercel
+      </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=vite" width="65" height="65" alt="Vite" />
+        <br>Vite
+      </td>
+      <td align="center" width="96">
+        <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" />
+        <br>JavaScript
+      </td>
+      <td align="center" width="96">
+        <img src="https://skillicons.dev/icons?i=nodejs" width="65" height="65" alt="Node.js" />
+        <br>Node.js
+      </td>
+    </tr>
+  </table>
+  <br><br>
+</div>
+
+
+### Technology Stack and Features
+
+- **React**: For building an interactive user interface.
+- **Tailwind CSS**: For responsive and modern design.
+- **Firebase**: Backend services for data storage, authentication, and hosting.
+- **JavaScript**: For implementing core functionalities and enhancing interactivity.
+- **Node.js**: For server-side processing and APIs.
+- **BERT & R-CNN**: For text and image/video analysis.
+- **YOLOv11**: State-of-the-art object detection model optimized for real-time image and video analysis with high accuracy and efficiency.
+- **Vercel**: Deployment and hosting with a focus on speed and simplicity.
+- **Vite**: For fast and efficient development. Vite's blazing fast build tool offers a smooth development experience with minimal configuration.
+
+---
+ 
+
 ## 🌟 Features
 
 ### **For Moderators:**
@@ -193,60 +249,6 @@ The **Moderator Dashboard** is designed to provide an intuitive and powerful int
 
 ---
 
-## 🛠️ Tech Stack
-
-The VisionSense tool is built using the following technologies:
-
-<div style="display: flex; align-items: flex-start; align: center">
-  <table align="center">
-    <tr>
-      <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="React" width="65" height="65" />
-        <br>React
-      </td>
-      <td align="center" width="96">
-        <img src="https://skillicons.dev/icons?i=tailwind" width="65" height="65" alt="Tailwind CSS" />
-        <br>Tailwind
-      </td>
-      <td align="center" width="96">
-        <img src="https://skillicons.dev/icons?i=firebase" width="65" height="65" alt="Firebase" />
-        <br>Firebase
-      </td>
-      <td align="center" width="96">
-        <img src="https://skillicons.dev/icons?i=vercel" width="65" height="65" alt="Vercel" />
-        <br>Vercel
-      </td>
-      <td align="center" width="96">
-        <img src="https://skillicons.dev/icons?i=vite" width="65" height="65" alt="Vite" />
-        <br>Vite
-      </td>
-      <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" />
-        <br>JavaScript
-      </td>
-      <td align="center" width="96">
-        <img src="https://skillicons.dev/icons?i=nodejs" width="65" height="65" alt="Node.js" />
-        <br>Node.js
-      </td>
-    </tr>
-  </table>
-  <br><br>
-</div>
-
-
-### Technology Stack and Features
-
-- **React**: For building an interactive user interface.
-- **Tailwind CSS**: For responsive and modern design.
-- **Firebase**: Backend services for data storage, authentication, and hosting.
-- **JavaScript**: For implementing core functionalities and enhancing interactivity.
-- **Node.js**: For server-side processing and APIs.
-- **BERT & R-CNN**: For text and image/video analysis.
-- **YOLOv11**: State-of-the-art object detection model optimized for real-time image and video analysis with high accuracy and efficiency.
-- **Vercel**: Deployment and hosting with a focus on speed and simplicity.
-- **Vite**: For fast and efficient development. Vite's blazing fast build tool offers a smooth development experience with minimal configuration.
-
----
 
 
 
