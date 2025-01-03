@@ -15,6 +15,67 @@ Welcome to **VisionSense** – an AI-powered content moderation tool seamlessly 
 - **Seamless Integration:** Easy setup with popular social media platforms.
 - **Scalable Solution:** Perfect for platforms of all sizes.
 
+## 🛠️ Development Workflow
+
+### Prerequisites
+
+Ensure the following are installed:
+
+- Node.js (v16 or later)
+- npm (v8 or later)
+
+
+
+
+### Installation Steps
+
+
+1. Clone the Repository: Start by cloning the repository to your local machine. Open your terminal and run the following command:
+   ```bash
+   git clone https://github.com/Vaithiyanathant/VISION-SENSE-KYN-HACKATHON.git
+   ```
+2. Navigate to the Project Directory: Change your current directory to the project folder:
+  ```bash
+    cd VISION-SENSE-KYN-HACKATHON
+   ```
+3. Install Dependencies: Install the required dependencies using npm:
+ ```bash
+    npm install  
+   ```
+ ```bash
+    npm run dev
+   ```
+
+
+
+
+
+
+## 📸 Screenshots
+
+# 🏠 Home Page
+![Screenshot 1](https://drive.google.com/uc?export=view&id=1J7uu35PBc-ForqY_DmBvylNQXTnBwYu7)
+
+# 🖼️ Image Analysis Page
+![Screenshot 2](https://drive.google.com/uc?export=view&id=1byBlu0MWTtIDkY05YM6CakZbAlFrf-No)
+![Screenshot 5](https://drive.google.com/uc?export=view&id=1Wz44WbmvLSE1P_oG9OY26IgImn02tOnF)
+
+# 🖼️ Video Analysis Page
+![Video Analysis Image](https://drive.google.com/uc?export=view&id=1l4q6S-QTjO6QuiLMJW0EZJ8rTykE64c3)
+
+# 📄 Text Analysis Page
+![Screenshot 3](https://drive.google.com/uc?export=view&id=1PXZfR_A1uSj69vrehhIxSDQ87BEeos8w)
+
+# 🛡️ Moderation log Page with Filter
+![Screenshot 6](https://drive.google.com/uc?export=view&id=1f_ORnHBs6p6VGhKH0Qsjf09B1pQZlC-f)
+
+# 📊 Analytics, 🌍 Graphs, 🗺️ Heap Map, and 📈 Dynamic Charts
+![Screenshot 7](https://drive.google.com/uc?export=view&id=1DStvy1lU4jtbGPEI_rQ3FaFoJ89mwOkU)
+![Screenshot 8](https://drive.google.com/uc?export=view&id=1y8ZulTy0PWKlshLvC_3_wf5ub_vjarNh)
+![Screenshot 9](https://drive.google.com/uc?export=view&id=1K4mbL6r354HwSdtmJVGUje0IW574ZQRH)
+
+
+
 ## 🌟 Features
 
 ### **For Moderators:**
@@ -37,6 +98,9 @@ Welcome to **VisionSense** – an AI-powered content moderation tool seamlessly 
 - 🔄 **Real-Time Updates**
   - Get live updates on flagged content, including text, images, videos, and live streams.
   - Allows for real-time intervention and rapid decision-making.
+
+
+
 
 ### **For Users:**
 
@@ -183,61 +247,6 @@ The VisionSense tool is built using the following technologies:
 - **Vite**: For fast and efficient development. Vite's blazing fast build tool offers a smooth development experience with minimal configuration.
 
 ---
-
-## 📸 Screenshots
-
-# 🏠 Home Page
-![Screenshot 1](https://drive.google.com/uc?export=view&id=1J7uu35PBc-ForqY_DmBvylNQXTnBwYu7)
-
-# 🖼️ Image Analysis Page
-![Screenshot 2](https://drive.google.com/uc?export=view&id=1byBlu0MWTtIDkY05YM6CakZbAlFrf-No)
-![Screenshot 5](https://drive.google.com/uc?export=view&id=1Wz44WbmvLSE1P_oG9OY26IgImn02tOnF)
-
-# 🖼️ Video Analysis Page
-![Video Analysis Image](https://drive.google.com/uc?export=view&id=1l4q6S-QTjO6QuiLMJW0EZJ8rTykE64c3)
-
-# 📄 Text Analysis Page
-![Screenshot 3](https://drive.google.com/uc?export=view&id=1PXZfR_A1uSj69vrehhIxSDQ87BEeos8w)
-
-# 🛡️ Moderation log Page with Filter
-![Screenshot 6](https://drive.google.com/uc?export=view&id=1f_ORnHBs6p6VGhKH0Qsjf09B1pQZlC-f)
-
-# 📊 Analytics, 🌍 Graphs, 🗺️ Heap Map, and 📈 Dynamic Charts
-![Screenshot 7](https://drive.google.com/uc?export=view&id=1DStvy1lU4jtbGPEI_rQ3FaFoJ89mwOkU)
-![Screenshot 8](https://drive.google.com/uc?export=view&id=1y8ZulTy0PWKlshLvC_3_wf5ub_vjarNh)
-![Screenshot 9](https://drive.google.com/uc?export=view&id=1K4mbL6r354HwSdtmJVGUje0IW574ZQRH)
-
-
-## 🛠️ Development Workflow
-
-### Prerequisites
-
-Ensure the following are installed:
-
-- Node.js (v16 or later)
-- npm (v8 or later)
-
-
-
-
-### Installation Steps
-
-
-1. Clone the Repository: Start by cloning the repository to your local machine. Open your terminal and run the following command:
-   ```bash
-   git clone https://github.com/Vaithiyanathant/VISION-SENSE-KYN-HACKATHON.git
-   ```
-2. Navigate to the Project Directory: Change your current directory to the project folder:
-  ```bash
-    cd VISION-SENSE-KYN-HACKATHON
-   ```
-3. Install Dependencies: Install the required dependencies using npm:
- ```bash
-    npm install  
-   ```
- ```bash
-    npm run dev
-   ```
 
 
 
